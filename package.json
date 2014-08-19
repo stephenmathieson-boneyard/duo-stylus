@@ -1,0 +1,31 @@
+{
+  "name": "duo-stylus",
+  "version": "0.0.0",
+  "description": "compile stylus to css",
+  "keywords": [
+    "duo",
+    "stylus"
+  ],
+  "author": "Stephen Mathieson <me@stephenmathieson.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stephenmathieson/duo-stylus.git"
+  },
+  "dependencies": {
+    "debug": "^0.7.4",
+    "stylus": "^0.47.3"
+  },
+  "devDependencies": {
+    "co": "^3.1.0",
+    "co-fs": "^1.2.0",
+    "co-mocha": "^1.0.0",
+    "duo": "^0.7.5",
+    "gnode": "0.0.8",
+    "mocha": "^1.21.4"
+  },
+  "main": "index",
+  "scripts": {
+    "test": "make test"
+  },
+  "license": "MIT"
+}
