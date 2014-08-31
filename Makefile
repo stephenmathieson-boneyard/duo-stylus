@@ -5,7 +5,7 @@ STYL = $(wildcard test/fixtures/*/*.styl)
 CSS = $(STYL:.styl=.css)
 
 test: node_modules $(CSS)
-	@$(BIN)/gnode $(BIN)/mocha \
+	@$(BIN)/gnode $(BIN)/_mocha \
 	  --reporter $(REPORTER) \
 	  --require co-mocha
 
