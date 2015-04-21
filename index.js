@@ -22,11 +22,12 @@ module.exports = plugin;
 
 function plugin(opts) {
   opts = opts || {};
-  return function stylus(file) {
-    if ('styl' != file.type) return;
+  return function *stylus(file, entry) {
+    if ('styl' != entry.type) return;
     debug('compiling %s to css', file.id);
-    file.src = render(file.src, opts);
+    file.src = yield render(file.src, opts);
     file.type = 'css';
+    done();
   };
 }
 
@@ -40,5 +41,7 @@ function plugin(opts) {
  */
 
 function render(src, opts) {
-  return stylus(src, opts).render();
+  return function(done){
+    stylus(src, opts).render(done);
+  };
 }
