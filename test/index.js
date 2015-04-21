@@ -14,7 +14,7 @@ describe('duo-stylus', function () {
     var duo = Duo(root);
     duo.entry(join(root, 'index.styl'));
     duo.use(stylus());
-    var actual = yield duo.run();
+    var actual = (yield duo.run()).code;
     var expected = yield fs.readFile(join(root, 'index.css'), 'utf8');
     assert.equal(actual.trim(), expected.trim());
   });
