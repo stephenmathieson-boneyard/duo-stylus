@@ -27,7 +27,6 @@ function plugin(opts) {
     debug('compiling %s to css', file.id);
     file.src = yield render(file.src, opts);
     file.type = 'css';
-    done();
   };
 }
 
