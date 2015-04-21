@@ -19,4 +19,7 @@ node_modules: package.json
 clean:
 	rm -rf test/fixtures/*/{components,*.css}
 
-.PHONY: test
+distclean: clean
+	rm -rf node_modules
+
+.PHONY: test distclean
