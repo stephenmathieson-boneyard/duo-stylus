@@ -23,7 +23,7 @@ module.exports = plugin;
 function plugin(opts) {
   opts = opts || {};
   return function *stylus(file, entry) {
-    if ('styl' != entry.type) return;
+    if ('styl' != file.type) return;
     debug('compiling %s to css', file.id);
     file.src = yield render(file.src, opts);
     file.type = 'css';
